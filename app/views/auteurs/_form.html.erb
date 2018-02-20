@@ -1,0 +1,29 @@
+<li class="list-group-item">
+    <%= form_with(model: auteur, local: true) do |form| %>
+      <% if auteur.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(auteur.errors.count, "error") %> prohibited this auteur from being saved:</h2>
+
+          <ul>
+          <% auteur.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= form.label :name %>
+        <%= form.text_field :name, id: :auteur_name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :bio %>
+        <%= form.text_area :bio, id: :auteur_bio, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+</li>

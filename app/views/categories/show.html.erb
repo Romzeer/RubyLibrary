@@ -1,0 +1,18 @@
+<ul class="list-group">
+    <li class="list-group-item">
+    <p>
+        <strong>Name:</strong>
+        <%= @category.name %>
+    </p>
+
+    <p>
+        <strong>Desc:</strong>
+        <%= @category.desc %>
+    </p>
+
+    </li>
+    <li class="list-group-item">
+        <%= link_to 'Back', categories_path, class: "btn btn-info" %>
+        <%= link_to 'Edit', edit_category_path(@category), class: "btn btn-warning" %>
+    </li>
+</ul>

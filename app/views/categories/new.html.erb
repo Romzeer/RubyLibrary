@@ -1,0 +1,7 @@
+<h1>Nouvelle catégorie</h1>
+<ul class="list-group">
+    <%= render 'form', category: @category %>
+  <li class="list-group-item">
+    <%= link_to 'back', categories_path, class: 'btn btn-info' %>
+  </li>
+</ul>

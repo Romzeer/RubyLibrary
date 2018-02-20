@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-sm-12 col-lg-6">
+    <div class="row">
+        <div class="col-sm-12 col-lg-12">
+            <div class="thumbnail">
+                <img src="<%= @book.image %>" alt="...">
+                <div class="caption">
+                    <h3><%= @book.title %></h3>
+                    <p><%= @book.text %></p>
+                    <p><%= @book.auteur %></p>
+                    <p><%= @book.category %></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-12">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h2 style="margin: 10px 0">Commentaires</h2>
+                </li>
+                <% if (current_user)
+                        current_user_id = current_user.id
+                    else
+                        current_user_id = 0
+                    end %>
+                <%= render partial: @book.comments, :locals => {:current_user_id => current_user_id} %>
+            </ul>
+        </div>
+    </div>
+  </div>
+    <div class="col-sm-12 col-lg-6">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <h2 style="margin: 10px 0">Ajouter un commentaire</h2>
+            </li>
+            <% if user_signed_in? %>
+                <%= render 'comments/form_new' %>
+                <li class="list-group-item">
+                    <%= link_to 'Back', books_blog_path, class: 'btn btn-info' %>
+                    <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-warning' %>
+                </li>
+            <% else %>
+                <li class="list-group-item">
+                <%= link_to "Connexion",  new_user_session_path, class: 'btn btn-primary' %></li>
+            <% end %>
+        </ul>
+    </div>
+</div>

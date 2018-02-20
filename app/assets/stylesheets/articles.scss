@@ -1,0 +1,28 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.thumbnail {
+  height: 100%;
+  display: flex !important;
+  flex-direction: column;
+
+  img.list {
+    height: 150px !important;
+    object-fit: cover;
+  }
+  .caption {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.form-inline {
+  margin-bottom: 10px;
+}
+
+.row + .row {
+  margin-top: 30px;
+}

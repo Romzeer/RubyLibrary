@@ -1,0 +1,9 @@
+<h1>Editing Category</h1>
+
+<ul class="list-group">
+    <%= render 'form', auteur: @auteur %>
+  <li class="list-group-item">
+        <%= link_to 'Back', auteurs_path, class: 'btn btn-info' %>
+        <%= link_to 'Show', @auteur, class: 'btn btn-default' %>
+  </li>
+</ul>

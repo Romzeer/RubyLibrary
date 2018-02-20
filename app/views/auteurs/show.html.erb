@@ -1,0 +1,18 @@
+<ul class="list-group">
+    <li class="list-group-item">
+    <p>
+        <strong>Name:</strong>
+        <%= @auteur.name %>
+    </p>
+
+    <p>
+        <strong>Bio:</strong>
+        <%= @auteur.bio %>
+    </p>
+
+    </li>
+    <li class="list-group-item">
+        <%= link_to 'Back', auteurs_path, class: "btn btn-info" %>
+        <%= link_to 'Edit', edit_auteur_path(@auteur), class: "btn btn-warning" %>
+    </li>
+</ul>

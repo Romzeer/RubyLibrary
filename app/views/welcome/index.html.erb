@@ -1,0 +1,20 @@
+
+
+<div class="row flex">
+    <% @books.each_with_index do |book, index| %>
+        <div class="col-ms-12 col-lg-3">
+            <div class="thumbnail">
+                <img src="<%= book.image %>" alt="Card image cap" class="list" style="width: 100%;">
+                <div class="caption">
+                    <%= link_to (book_path(book)) do %><h4 class="card-title"><%= book.title %></h4><% end %>
+                    <p class="card-text"> <%= book.text.truncate(150, separator: ' ', omission:'...') %></p>
+                    <%= link_to 'Lire la suite', book_path(book), class: 'btn btn-primary' %>
+                </div>
+            </div>
+        </div>
+        <% if index % 4 == 3 %>
+            </div>
+            <div class="row flex">
+        <% end %>
+    <% end %>
+</div>
