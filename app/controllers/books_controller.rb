@@ -28,8 +28,8 @@ class BooksController < ApplicationController
     def new
         @session = session
         @book = Book.new
-        #@categories = Category.all.map{|c| [ c.name, c.id ] }
-        @auteurs = Auteur.all.map{|c| [ c.name, c.id ] }
+        @categories = Category.all.map{|c| [ c.name, c.id ] }
+        @auteurs = Auteur.all.map{|a| [ a.name, a.id ] }
         @page_title = 'Add a Book'
         render layout: 'admin'
     end
@@ -50,7 +50,7 @@ class BooksController < ApplicationController
     def edit
         @book = Book.find(params[:id])
         @categories = Category.all.map{|c| [ c.name, c.id ] }
-        @auteurs = Auteur.all.map{|c| [ c.name, c.id ] }
+        @auteurs = Auteur.all.map{|a| [ a.name, a.id ] }
         @page_title = "Edit #{@book.title}"
         render layout: 'admin'
     end
